@@ -6,8 +6,29 @@ namespace HelloWorld
 {
     class Game
     {
+        string CombineWords(string word1, string word2)
+        {
+            string result = word1 + word2;
+            return result;
+        }
+        int SumTwoNumbers(int num1, int num2)
+        {
+            int result = num1 + num2;
+            return result;
+        }
+        void PrintStats(string name, float playerHealth, int damage, int level, string role)
+        {
+
+            Console.WriteLine("Player Name: " + name);
+            Console.WriteLine("Player Health: " + playerHealth);
+            Console.WriteLine("Player level: " + level);
+            Console.WriteLine("Player Role: " + role);
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+        }
         public void Run()
         {
+            string newWord = CombineWords("Peanut", "butter");
             bool gameOver = false;
             while (gameOver == false)
             {
@@ -66,28 +87,25 @@ namespace HelloWorld
                 Console.WriteLine("You have been approached by a LOSER.");
                 Console.WriteLine("They have offered you candy.");
                 Console.WriteLine("Do you accept?");
-                Console.WriteLine("[2] Yes");
-                Console.WriteLine("[1] No");
+                Console.WriteLine("[1] Yes");
+                Console.WriteLine("[2] No");
                 input = Console.ReadKey().KeyChar;
-                if (input == '2')
+                if (input == '1')
                 {
                     playerHealth = 0;
                     Console.WriteLine("You took the candy and die. You lose!!");
                     gameOver = true;
-                    continue;
+                    break;
                 }
-                else if (input == '1')
+                else if (input == '2')
                 {
                     Console.WriteLine("You didn't take the candy because you're not a LOSER! However, now he wants to kill you!");
                     //Battle Sequence
                     int loserHealth = 60;
                     int loserDamage = 25;
-                    while (playerHealth > 0 && loserHealth > 0) ;
+                    while (playerHealth > 0 && loserHealth > 0);
                     {
-                        Console.WriteLine("Player Name: " + name);
-                        Console.WriteLine("Player Health: " + playerHealth);
-                        Console.WriteLine("Player level: " + level);
-                        Console.WriteLine("Player Role: " + role);
+                        
                         //Enemy Stats
                         Console.WriteLine("\nLoser");
                         Console.WriteLine("Loser Health " + loserHealth);
@@ -223,9 +241,9 @@ namespace HelloWorld
             float health2Regen = 2;
 
             Console.WriteLine("You have been selected for the Rescue Squadron! You have been asigned the color " + color + ". " + "Welcome to have you along " + "! ");
-            Console.Clear();
             Console.WriteLine("Hopefully you have gotten your mutator. It may sound dangerous, but don't worry. This device will give you the power to save people! ");
             Console.WriteLine("With your special power of " + color + ", " + "you will be a massive asset to the team! Now Let's get straight to training and see how good you are in combat!");
+            Console.Clear();
             Console.WriteLine("A training dummy appeared before you. What is your first action?");
             int dummyHealth = 6;
             int dummyDamage = 2;
