@@ -37,12 +37,12 @@ namespace HelloWorld
                 while (input != '1' && input != '2')
                 {
                     input = Console.ReadKey().KeyChar;
-                    if (input == '1')
+                    if (input == '2')
                     {
                         playerHealth = 200;
                         role = "Knight";
                     }
-                    else if (input == '2')
+                    else if (input == '1')
                     {
                         damage = 40;
                         role = "Wizard";
@@ -66,17 +66,17 @@ namespace HelloWorld
                 Console.WriteLine("You have been approached by a LOSER.");
                 Console.WriteLine("They have offered you candy.");
                 Console.WriteLine("Do you accept?");
-                Console.WriteLine("[1] Yes");
-                Console.WriteLine("[2] No");
+                Console.WriteLine("[2] Yes");
+                Console.WriteLine("[1] No");
                 input = Console.ReadKey().KeyChar;
-                if (input == '1')
+                if (input == '2')
                 {
                     playerHealth = 0;
                     Console.WriteLine("You took the candy and die. You lose!!");
                     gameOver = true;
                     continue;
                 }
-                else if (input == '2')
+                else if (input == '1')
                 {
                     Console.WriteLine("You didn't take the candy because you're not a LOSER! However, now he wants to kill you!");
                     //Battle Sequence
@@ -143,7 +143,7 @@ namespace HelloWorld
             //Create ann application that gets the user's name along with an addititonal input.
             //Print the user's name and input to the console along With their stats.
             string color = "none";
-            Console.WriteLine("Hello, and welcome to our organization. State your name");
+            Console.WriteLine("Hello, and welcome to our organization. State your name.");
             string protag = Console.ReadLine();
             Console.WriteLine("Hello " + protag + "." + " Tell me your favorite weapon.");
             string weapon = Console.ReadLine();
