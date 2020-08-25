@@ -254,13 +254,71 @@ namespace HelloWorld
                     if (direction == "west")
                     {
 
+
+
+
+
+
+
+
+
+
+
+
                     //Create ann application that gets the user's name along with an addititonal input.
                     //Print the user's name and input to the console along With their stats.
                     string color = "none";
+                    string weapon = "none";
+                    void PrintStats(string name, float hp, int hit, int lv, string color)
+                    {
+                        Console.WriteLine("\nPlayer Name: " + name);
+                        Console.WriteLine("Player Health: " + hp);
+                        Console.WriteLine("Player Damage: " + hit);
+                        Console.WriteLine("Player Lv: " + lv);
+                        Console.WriteLine("Player Weapon: " + weapon);
+                        Console.WriteLine("Player Color: " + color);
+                        Console.WriteLine("Press any key to continue");
+                        Console.ReadKey();
+                    }
+
+                    //Typing Name
                     Console.WriteLine("Hello, and welcome to our organization. State your name.");
                     string protag = Console.ReadLine();
-                    Console.WriteLine("Hello " + protag + "." + " Tell me your favorite weapon.");
-                    string weapon = Console.ReadLine();
+
+                    //Selecting weapon
+                    Console.WriteLine("Hello " + protag + "." + " Please select a weapon.");
+                    Console.WriteLine("[1] Sword");
+                    Console.WriteLine("[2] Gun");
+                    Console.WriteLine("[3] Axe");
+                    Console.WriteLine("[4] Bo Staff");
+                    Console.WriteLine("[5] None");
+                    char selectWeapon = ' ';
+                    while (selectWeapon != '1' && selectWeapon != '2' && selectWeapon != '3' && selectWeapon != '4' && selectWeapon != '5')
+                    {
+                        selectWeapon = Console.ReadKey().KeyChar;
+                    }
+
+                    if (selectWeapon == '1')
+                    {
+                        weapon = "sword";
+                    }
+                    else if (selectWeapon == '2')
+                    {
+                        weapon = "gun";
+                    }
+                    else if (selectWeapon == '3')
+                    {
+                        weapon = "axe";
+                    }
+                    else if (selectWeapon =='4')
+                    {
+                        weapon = "bo staff";
+                    }
+                    else
+                    {
+                        weapon = "none";
+                    }
+
                     int hit = 10;
                     int def = 10;
                     int spd = 10;
@@ -274,14 +332,14 @@ namespace HelloWorld
                     Console.WriteLine("[3] Green");
                     Console.WriteLine("[4] Yellow");
                     Console.WriteLine("[5] Pink");
-                    char select = ' ';
+                    char selectColor = ' ';
                     Console.WriteLine();
-                    while (select != '1' && select != '2' && select != '3' && select != '4' && select != '5')
+                    while (selectColor != '1' && selectColor != '2' && selectColor != '3' && selectColor != '4' && selectColor != '5')
                     {
-                        select = Console.ReadKey().KeyChar;
+                        selectColor = Console.ReadKey().KeyChar;
                     }
 
-                    if (select == '1')
+                    if (selectColor == '1')
                     {
                         hit = 20;
                         def = 10;
@@ -290,7 +348,7 @@ namespace HelloWorld
                         hp = 10;
                         color = "Red";
                     }
-                    else if (select == '2')
+                    else if (selectColor == '2')
                     {
                         hit = 10;
                         def = 20;
@@ -299,7 +357,7 @@ namespace HelloWorld
                         hp = 10;
                         color = "Blue";
                     }
-                    else if (select == '3')
+                    else if (selectColor == '3')
                     {
                         hit = 10;
                         def = 10;
@@ -308,7 +366,7 @@ namespace HelloWorld
                         hp = 10;
                         color = "Green";
                     }
-                    else if (select == '4')
+                    else if (selectColor == '4')
                     {
                         hit = 10;
                         def = 10;
@@ -317,7 +375,7 @@ namespace HelloWorld
                         hp = 10;
                         color = "Yellow";
                     }
-                    else if (select == '5')
+                    else if (selectColor == '5')
                     {
                         hit = 10;
                         def = 10;
@@ -346,21 +404,22 @@ namespace HelloWorld
                     Console.WriteLine("[1] Punch");
                     Console.WriteLine("[2] Kick");
                     Console.WriteLine("[3] Use Weapon ");
+                    char selectAction = ' ';
 
                     //Making play pick action
-                    while (select != '1' && select != '2' && select != '3')
+                    while (selectAction != '1' && selectAction != '2' && selectAction != '3')
                     {
-                        select = Console.ReadKey().KeyChar;
-                        if (select == '1')
+                        selectAction = Console.ReadKey().KeyChar;
+                        if (selectAction == '1')
                         {
                             Console.WriteLine("You punched the dummy in the head!");
                         }
-                        else if (select == '2')
+                        else if (selectAction == '2')
                         {
                             Console.WriteLine("You kicked the dummy in the ribs!");
                         }
 
-                        else if (select == '3')
+                        else if (selectAction == '3')
                             Console.WriteLine("You hit the dummy with your " + weapon + " !");
                     }
                     //Dunny attacks
@@ -370,19 +429,19 @@ namespace HelloWorld
                     Console.WriteLine("[1] Punch");
                     Console.WriteLine("[2] Kick");
                     Console.WriteLine("[3] Use Weapon ");
-                    while (select != '1' && select != '2' && select != '3')
+                    while (selectAction != '1' && selectAction != '2' && selectAction != '3')
                     {
-                        select = Console.ReadKey().KeyChar;
-                        if (select == '1')
+                        selectAction = Console.ReadKey().KeyChar;
+                        if (selectAction == '1')
                         {
                             Console.WriteLine("You punched the dummy in the head! The dummy is defeated!");
                         }
-                        else if (select == '2')
+                        else if (selectAction == '2')
                         {
                             Console.WriteLine("You kicked the dummy in the ribs! The dummy is defeated"!);
                         }
 
-                        else if (select == '3')
+                        else if (selectAction == '3')
                             Console.WriteLine("You hit the dummy with your " + weapon + " !" + "The dummy is defeated!");
                     }
                     Console.Write("Exellent job! You really let that dummy have it!");
