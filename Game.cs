@@ -239,6 +239,8 @@ namespace HelloWorld
                         Console.WriteLine("You ignored the sign and decided to trust your " + role + " instincts instead");
                         Console.WriteLine("Press any key to continue");
                         Console.ReadKey();
+                        Console.Clear()
+                        ;
                         if (role == "Wizard")
                         {
                             direction = "east";
@@ -446,6 +448,16 @@ namespace HelloWorld
                             Console.WriteLine("You hit the dummy with your " + weapon + " !" + "The dummy is defeated!");
                     }
                     Console.Write("Exellent job! You really let that dummy have it!");
+                    Console.WriteLine("Press any key to continue");
+                    Console.ReadKey();
+                    Console.Clear();
+
+                    //Rescue Exercise
+                    Console.WriteLine("Now let's get on with the rescue exercise.");
+                    Console.WriteLine("There is a monster wrecking havoc upon the city! It is your job to evacuate the people!");
+                    Console.WriteLine("[1] F");
+
+
 
 
                 }
